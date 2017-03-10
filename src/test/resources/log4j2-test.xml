@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+**********************************************************************************
+This file serves as an example, copy it somewhere and pass VM arg:
+    -Dlog4j.configurationFile=file:///home/user/log4j2.xml
+**********************************************************************************
+-->
+<Configuration monitorInterval="10">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601} [%5p] (%t) [%40.40c{2}:%L] - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.jandy" level="trace"/>
+
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
